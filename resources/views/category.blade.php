@@ -1,8 +1,20 @@
+<style>
+    #navbar {
+
+        background-color : salmon;
+
+    }
+
+    #back {
+        color : salmon;
+    }
+</style>
+
 @extends('layouts.main')
 
 @section('container')
-<h1>{{ $title }} </h1>
-@foreach ($postsy as $post)
+<h1> Post Category : {{ $category }} </h1>
+@foreach ($posts as $post)
 
 <article class="mb-4">
     

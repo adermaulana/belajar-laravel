@@ -24,10 +24,13 @@ Route::get('/', function () {
 
 Route::get('/about', [PostController::class, 'kematian']);
 
-
 Route::get('/posts', [PostController::class, 'index']);
 
-Route::get('posts/{slug}', [PostController::class, 'show']);
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
+
+Route::get('/categories/{category:slug}', [PostController::class, 'category']);
+
+Route::get('/categories', [PostController::class, 'categories']);
 
 
 
