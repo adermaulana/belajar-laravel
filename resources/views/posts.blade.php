@@ -1,4 +1,9 @@
 <style>
+        #navbar {
+
+        background-color : salmon;
+
+    }
 
     #warna {
         text-decoration :none;
@@ -17,7 +22,7 @@
     <h2 class="mb-1">
     <a style="color:salmon;" href="/posts/{{ $post -> slug  }} ">{{ $post -> title }} </a>
     </h2>
-    <p class="mb-3">By <a class="text-decoration-none" href="#">{{ $post->user->name }} </a> in<a id="warna" href="/categories/{{ $post->category->slug }}"> {{ $post->category->nama   }}</a></p>
+    <p class="mb-3">By <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }} </a> in<a id="warna" href="/categories/{{ $post->category->slug }}"> {{ $post->category->nama   }}</a></p>
     
     <p>{{ $post->excerpt }} </p>
 

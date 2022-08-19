@@ -23,7 +23,7 @@
     <a style="color:salmon;" href="/posts/{{ $post -> slug  }} ">{{ $post -> title }} </a>
 
     </h2>
-    <h5>Dibuat Oleh : {{ $post->author }} </h5>
+    <h5>Dibuat Oleh : {{ $post->author->name }} </h5>
     <p>{{ $post->excerpt }} </p>
 </article> 
 

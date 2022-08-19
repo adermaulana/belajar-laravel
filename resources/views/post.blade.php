@@ -26,7 +26,7 @@
 
 <h2 >{{ $postman->title }} </h2>
 
-<p class="mb-3"><a class="warna text-decoration-none" href="#">{{ $postman->user->name }}</a> in<a class="warna text-decoration-none" href="/categories/{{ $postman->category->slug }}"> {{ $postman->category->nama }}</a></p>
+<p class="mb-3"><a class="warna text-decoration-none" href="/authors/{{ $postman->author->username }}">{{ $postman->author->name }}</a> in<a class="warna text-decoration-none" href="/categories/{{ $postman->category->slug }}"> {{ $postman->category->nama }}</a></p>
 
 <p> {!! $postman->body !!} </p>
 
