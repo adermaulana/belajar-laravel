@@ -24,11 +24,23 @@
 
 @section ('container')
 
-<h2 >{{ $postman->title }} </h2>
+<div class="container">
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <h2 class="mb-4" >{{ $posts->title }} </h2>
 
-<p class="mb-3"><a class="warna text-decoration-none" href="/authors/{{ $postman->author->username }}">{{ $postman->author->name }}</a> in<a class="warna text-decoration-none" href="/categories/{{ $postman->category->slug }}"> {{ $postman->category->nama }}</a></p>
+            <p class="mb-3"><a class="warna text-decoration-none" href="/authors/{{ $posts->author->username }}">{{ $posts->author->name }}</a> in<a class="warna text-decoration-none" href="/categories/{{ $posts->category->slug }}"> {{ $posts->category->nama }}</a></p>
 
-<p> {!! $postman->body !!} </p>
+            <img class="img-fluid" src="https://source.unsplash.com/900x400?{{ $posts->category->nama }}" alt="{{ $posts->category->nama }}">
 
-<a class="d-block" id="back" href="/posts">Back To Post</a>
+            <article class="my-3 fs-5">
+                {!! $posts->body !!} 
+            </article>
+
+            <a class="d-block" id="back" href="/posts">Back To Post</a>
+        </div>
+    </div>
+</div>
+
+
 @endsection

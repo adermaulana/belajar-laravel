@@ -12,9 +12,9 @@ class PostController extends Controller
     public function index(){
 
         return view('posts', [
-            "title" => "Halaman Blog",
+            "title" => "All Posts",
             // "postsy" => Post::all(),
-            "postsy" => Post::latest()->get()
+            "posts" => Post::latest()->get()
         ]);
 
     }
@@ -23,7 +23,7 @@ class PostController extends Controller
 
         return view('post', [
             "title" => "Single Post",
-            "postman" => $post
+            "posts" => $post
         ]);
 
     }
@@ -39,10 +39,10 @@ class PostController extends Controller
 
     public function category(Category $category) {
 
-        return view('category', [
-            "title" => $category->nama,
-            "posts" => $category->posts,
-            "category" => $category->nama
+        return view('posts', [
+            "title" => " Post By Category : $category->nama",
+            "posts" => $category->posts->load('category','author')
+
         ]);
 
     }
@@ -60,8 +60,8 @@ class PostController extends Controller
     public function authors(User $author) {
 
         return view('posts', [
-            "title" => 'User Post',
-            "postsy" => $author->posts,
+            "title" => "Post By Authors : $author->name",
+            "posts" => $author->posts->load('category','author'),
 
         ]);
 
