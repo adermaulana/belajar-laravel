@@ -29,7 +29,7 @@
         <div class="col-md-8">
             <h2 class="mb-4" >{{ $posts->title }} </h2>
 
-            <p class="mb-3"><a class="warna text-decoration-none" href="/authors/{{ $posts->author->username }}">{{ $posts->author->name }}</a> in<a class="warna text-decoration-none" href="/categories/{{ $posts->category->slug }}"> {{ $posts->category->nama }}</a></p>
+            <p class="mb-3"><a class="warna text-decoration-none" href="/posts?author={{ $posts->author->username }}">{{ $posts->author->name }}</a> in<a class="warna text-decoration-none" href="/posts?category={{ $posts->category->slug }}"> {{ $posts->category->nama }}</a></p>
 
             <img class="img-fluid" src="https://source.unsplash.com/900x400?{{ $posts->category->nama }}" alt="{{ $posts->category->nama }}">
 
